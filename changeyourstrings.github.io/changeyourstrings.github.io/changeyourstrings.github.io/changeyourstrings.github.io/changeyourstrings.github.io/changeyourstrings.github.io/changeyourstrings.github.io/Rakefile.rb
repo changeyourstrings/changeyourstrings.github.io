@@ -24,6 +24,7 @@ task :publish => [:generate] do
 
     system "cp -r _site/* changeyourstrings.github.io"
     system "cd changeyourstrings.github.io"
+    
     p "Git adding: "
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
