@@ -23,7 +23,7 @@ task :publish => [:generate] do
     end
 
     system "cp -r _site/* changeyourstrings.github.io/"
-    system "cd changeyourstrings.github.io/"
+    Dir.chdir "changeyourstrings.github.io/"
     system "pwd"
 
     p "Git adding: "

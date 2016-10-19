@@ -22,7 +22,7 @@ task :publish => [:generate] do
         system "git clone https://github.com/changeyourstrings/changeyourstrings.github.io"
     end
 
-  Dir.mktmpdir do |tmp|
+
     system "mv _site/* #{tmp}"
     system "git checkout -B master"
     system "rm -rf *"
@@ -32,6 +32,6 @@ task :publish => [:generate] do
     system "git commit -am #{message.shellescape}"
     system "git push origin master --force"
     system "git checkout master"
-  end
+  
 end
 task :default => :publish
