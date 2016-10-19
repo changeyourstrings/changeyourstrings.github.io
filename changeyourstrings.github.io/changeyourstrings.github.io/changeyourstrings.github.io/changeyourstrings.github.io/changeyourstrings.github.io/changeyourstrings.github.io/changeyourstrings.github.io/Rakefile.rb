@@ -23,14 +23,14 @@ task :publish => [:generate] do
     end
 
     system "cp -r _site/* changeyourstrings.github.io/"
-    system "cd changeyourstrings.github.io/"
+    Dir.chdir "changeyourstrings.github.io/"
     system "pwd"
 
     p "Git adding: "
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
     p "Git commit: "
-    system "git commit -am #{message.shellescape}"
+    system "git commit -m \"#{message}\" "
     p "Git push: "
     system "git push origin master"
     p "Done."

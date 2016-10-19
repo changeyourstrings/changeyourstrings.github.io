@@ -7,20 +7,14 @@ require 'yaml'
 require 'tmpdir'
 require 'jekyll'
 
-desc "Generate blog files"
-task :generate do
-  Jekyll::Site.new(Jekyll.configuration({
-    "source"      => ".",
-    "destination" => "_site"
-  })).process
-end
-
 desc "Generate and publish blog to gh-pages"
-task :publish => [:generate] do
+task :publish do
 
     if not Dir.exist? "_site"
         system "git clone https://github.com/changeyourstrings/changeyourstrings.github.io"
     end
+
+    system "jekyll clean && jekyll build"
 
     system "cp -r _site/* changeyourstrings.github.io/"
     Dir.chdir "changeyourstrings.github.io/"

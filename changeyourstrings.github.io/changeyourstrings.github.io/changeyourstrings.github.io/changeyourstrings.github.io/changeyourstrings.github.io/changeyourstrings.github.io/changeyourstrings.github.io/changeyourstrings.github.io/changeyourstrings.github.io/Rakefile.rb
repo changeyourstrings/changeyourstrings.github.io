@@ -22,9 +22,10 @@ task :publish => [:generate] do
         system "git clone https://github.com/changeyourstrings/changeyourstrings.github.io"
     end
 
-    system "cp -r _site/* changeyourstrings.github.io"
-    system "cd changeyourstrings.github.io"
-    
+    system "cp -r _site/* changeyourstrings.github.io/"
+    system "cd changeyourstrings.github.io/"
+    system "pwd"
+
     p "Git adding: "
     system "git add ."
     message = "Site updated at #{Time.now.utc}"

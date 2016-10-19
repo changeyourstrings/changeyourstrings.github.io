@@ -22,16 +22,15 @@ task :publish => [:generate] do
         system "git clone https://github.com/changeyourstrings/changeyourstrings.github.io"
     end
 
-
-    system "mv _site/* #{tmp}"
-    system "git checkout -B master"
-    system "rm -rf *"
-    system "mv #{tmp}/* ."
-    message = "Site updated at #{Time.now.utc}"
+    system "cp -r _site/* changeyourstrings.github.io"
+    system "cd changeyourstrings.github.io"
+    p "Git adding: "
     system "git add ."
+    message = "Site updated at #{Time.now.utc}"
+    p "Git commit: "
     system "git commit -am #{message.shellescape}"
-    system "git push origin master --force"
-    system "git checkout master"
-  
+    p "Git push: "
+    system "git push origin master"
+    p "Done."
 end
 task :default => :publish
