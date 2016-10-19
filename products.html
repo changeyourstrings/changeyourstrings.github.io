@@ -14,29 +14,37 @@
 
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,800,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+
+    <script src="../assets/js/function.js"></script>
 </head>
 
 
 <body>
 
-
     <header>
-    <div class="header_container has_top_margin">
 
-        
-            <div class="header_pic">
-                <img class="logo" src="../images/Logo.svg" width=38%/>
-            </div>
-        
 
-        <div class="my_nav">
-            <div class="col" onclick="location.href='https://changeyourstrings.github.io/';">Main</div>
-            <div class="col" onclick="location.href='https://changeyourstrings.github.io/products';">Products</div>
-            <div class="col" onclick="location.href='https://changeyourstrings.github.io/3row';">3Row</div>
-            <div class="col" onclick="location.href='https://changeyourstrings.github.io/contact';">Contact</div>
-            <div class="col" onclick="location.href='https://changeyourstrings.github.io/about';">About</div>
+    <div id="head_pic" class="head_pic">
+        <img class="logo" src="../images/Logo.svg" width=40%/>
+    </div>
+
+    <div class="nav_wrapper">
+        <div id="navbar" class="my_nav" onscroll="make_static(navbar);">
+            <ul>
+                <li onclick="location.href='https://changeyourstrings.github.io/';">Main
+                </li>
+                <li onclick="location.href='https://changeyourstrings.github.io/products';">Products
+                </li>
+                <li onclick="location.href='https://changeyourstrings.github.io/3row';">3Row
+                </li>
+                <li onclick="location.href='https://changeyourstrings.github.io/contact';">Contact
+                </li>
+                <li onclick="location.href='https://changeyourstrings.github.io/about';">About
+                </li>
+            </ul>
         </div>
-</div>
+    </div>
+
 </header>
 
 
@@ -109,7 +117,9 @@
     </div>
 </footer>
 
-    <script src="../assets/js/product_page.js"></script>
+
+
+        <script src="../assets/js/product_page.js"></script>
 
 </body>
 

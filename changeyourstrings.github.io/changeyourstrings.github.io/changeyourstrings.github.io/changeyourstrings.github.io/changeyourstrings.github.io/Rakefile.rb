@@ -30,7 +30,7 @@ task :publish => [:generate] do
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
     p "Git commit: "
-    system "git commit -am #{message.shellescape}"
+    system "git commit -m \"#{message}\" "
     p "Git push: "
     system "git push origin master"
     p "Done."
